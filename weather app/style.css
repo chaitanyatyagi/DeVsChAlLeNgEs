@@ -1,0 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.left{
+    display: grid;
+    height: 100%;
+    width: 30%;
+    background-color: #1E213A;
+    grid-template-rows: 1fr 9fr 3fr 2fr 2fr;
+}
+input{
+    margin: 7px 0px 0px 5px;
+    width: 250px;
+    background-color:#E7E7EB;
+}
+button{
+    color: white;
+    margin: 0px 0px 0px 8px;
+    background-color: #3C47E9;
+}
+.image{
+    background-image: url(images/Cloud-background.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    opacity: 0.3;
+}
+.info{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+}
+.location{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+.temperature{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 144px;
+}
+.right{
+    display: grid;
+    height: 100%;
+    width: 70%;
+    background-color: #100E1D;
+    grid-template-rows: 0.7fr 3.5fr 0.7fr 8fr;
+}
+.top{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.day{
+    height: 55%;
+    width: 18%;
+    background-color: #1E213A;
+}
+.date{
+    font-family: Raleway;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+}
+.temp{
+    font-family: Raleway;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+}
+.bottom{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.middle{
+    text-align: center;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+}
+.block{
+    height: 45%;
+    width: 35%;
+    background-color: #1E213A;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.class1{
+    font-family: Raleway;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+}
+.class2{
+    font-size: 64px;
+    font-style: normal;
+    font-family: Raleway;
+    font-weight: bold;
+    text-align: center;
+}
+.celsius{
+    margin: 3px;
+    width: 25px;
+    border-radius: 80px;
+}
+.farenheit{
+    margin: 3px;
+    width: 25px;
+    border-radius: 80px;
+}
+@media (min-width:520px) and (max-width:810px){
+    input{
+        width: 180px;
+    }
+    .image{
+        height: 80%;
+        width: 90%;
+    }
+    .info{
+        font-size: 30px;
+    }
+    .location{
+        font-size: 14px;
+    }
+    .temperature{
+        font-size: 134px;
+    }
+    .block{
+        height: 40%;
+        width: 35%;
+    }
+    .day{
+        height: 50%;
+        width: 14%;
+    }
+}
+@media (min-width:380px) and (max-width:520px){
+    input{
+        width: 90px;
+        font-size: 10px;
+    }
+    .image{
+        height: 72%;
+        width: 100%;
+    }
+    .info{
+        font-size: 25px;
+    }
+    .location{
+        font-size: 12px;
+    }
+    .temperature{
+        font-size: 128px;
+    }
+    .block{
+        height: 32%;
+        width: 35%;
+    }
+    .day{
+        height: 45%;
+        width: 14%;
+    }
+}
+@media (min-width:150px) and (max-width:380px){
+    input{
+        width: 90px;
+        font-size: 10px;
+    }
+    .image{
+        height: 72%;
+        width: 100%;
+    }
+    .info{
+        font-size: 25px;
+    }
+    .location{
+        font-size: 12px;
+    }
+    .temperature{
+        font-size: 128px;
+    }
+    .block{
+        height: 32%;
+        width: 35%;
+    }
+    .day{
+        height: 45%;
+        width: 14%;
+    }
+    .right{
+        height: 50%;
+        width: 100%;
+    }
+    .left{
+        height: 50%;
+        width: 100%;
+    }
+}
