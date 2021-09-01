@@ -6,10 +6,10 @@ function DailyReport() {
     return (
         placeData.location?
         <div className='DailyReportCard'>
-            <div className='DailyReportInside'>{placeData.location.name}</div>
-            <div className='DailyReportInside'><img src="" alt="" /></div>
-            <div className='DailyReportInside'></div>
-        </div>: <h1>Place Not Found</h1>
+            <div className='DailyReportInside'>{placeData.forecast.forecastday[0].hour[18].time}</div>
+            <div className='DailyReportInsideImg'><img src={placeData.forecast.forecastday[0].hour[18].condition.icon} alt="" /></div>
+            <div className='DailyReportInside'>{placeData.forecast.forecastday[0].hour[18].temp_c}&deg;C</div>
+        </div>: ''
     )
 }
 
