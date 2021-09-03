@@ -10,6 +10,8 @@ import TodayReportTwo from './TodayReportTwo'
 import TodayReportTwo1 from './TodayReportTwo1'
 import {DailyReportSearchAction,DailyReportFetchAction} from '../redux/DailyReport/DailyReportActions'
 import {useSelector,useDispatch} from 'react-redux'
+import {CelsiusFahrenheitAction} from '../redux/CelsiusFahrenheit/CelsiusFahrenheitActions'
+import {FahrenheitCelsiusAction}  from '../redux/CelsiusFahrenheit/CelsiusFahrenheitActions'
 
 
 function Background() {
@@ -18,6 +20,7 @@ function Background() {
     },[])
     const place = useSelector(state => state.place)
     const placeData = useSelector(state => state.placeData)
+    const temp = useSelector(state => state.celsiusFahrenheit)
     const dispatch = useDispatch()
     return (
         <div className='Background'>
@@ -28,12 +31,15 @@ function Background() {
             </div>
             {placeData.location?<div className='LocationImage'><img src={placeData.current.condition.icon} alt="" /></div>:''}
             {placeData.location?<div className='WeatherDetail'>{placeData.current.condition.text}</div>:''}
-            {placeData.location?<div className='Temperature'>{placeData.current.temp_c}&deg;C</div>:''}
+            {placeData.location?temp?<div className='Temperature'>{placeData.current.temp_c}&deg;C</div>:<div className='Temperature'>{placeData.current.temp_f}&deg;F</div>:''}
             {placeData.location?<div className='Date'>{placeData.location.localtime}</div>:''}
             {placeData.location?<div className='Location'>{placeData.location.name}</div>:''}
             </div>
             <div className = 'Right'>
-                <div className='ButtonConvertor'></div>
+                <div className='ButtonConvertor'>
+                    {temp?<button className='CelsiusNew' onClick={()=>dispatch(CelsiusFahrenheitAction())}>&deg;C</button>:<button className='Celsius' onClick={()=>dispatch(CelsiusFahrenheitAction())}>&deg;C</button>}
+                    {temp?<button className='Fahrenheit' onClick={()=>dispatch(FahrenheitCelsiusAction())}>&deg;F</button>:<button className='FahrenheitNew' onClick={()=>dispatch(FahrenheitCelsiusAction())}>&deg;F</button>}
+                </div>
                 <div className='DailyReport'>
                     <DailyReport />
                     <DailyReport1 />
