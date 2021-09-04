@@ -26,7 +26,7 @@ function Background() {
         <div className='Background'>
             <div className='Left'>
             <div className='Search'>
-                <input type="text" value={place} onChange={event => {dispatch(DailyReportSearchAction(event.target.value))}}/>
+                <input className='myInput' type="text" value={place}  onChange={event => {dispatch(DailyReportSearchAction(event.target.value))}}/>
                 <button onClick={() => {dispatch(DailyReportFetchAction(place))}}><img src="https://img.icons8.com/ios-filled/50/000000/search--v1.png" alt="search-icon"/></button>
             </div>
             {placeData.location?<div className='LocationImage'><img src={placeData.current.condition.icon} alt="" /></div>:''}
